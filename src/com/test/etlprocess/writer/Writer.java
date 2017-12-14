@@ -15,10 +15,10 @@ public abstract class Writer {
 	}
 	public void setDestination(String destination) {
 		this.destination = destination;
-		initialise();
 	}
     public void setSource(String source) {
 		this.source = source;
+		initialise();
 	}
 	public abstract void write(String[] content);
 	protected abstract boolean initialise();

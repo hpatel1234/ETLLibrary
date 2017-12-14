@@ -9,7 +9,7 @@ public class InitCapFormatter extends Formatter {
 
 	@Override
 	protected String format(String input) {
-		if (input != null && input.length() > 0) {
+		if (input != null && input.trim().length() > 0) {
             char[] charArray = input.toCharArray();
             charArray[0] = Character.toUpperCase(charArray[0]);
             for (int index = 1; index < charArray.length; index++) {

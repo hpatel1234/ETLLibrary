@@ -6,6 +6,7 @@ import com.test.etlprocess.writer.impl.FileWriterImpl;
  *
  */
 public class WriterFactory {
+	public static final int FILLE_WRITER = 1;
 	private static WriterFactory instance = new WriterFactory();
 	private WriterFactory() {
 	}

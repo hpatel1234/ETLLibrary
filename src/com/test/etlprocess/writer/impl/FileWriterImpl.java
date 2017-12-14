@@ -18,6 +18,9 @@ public class FileWriterImpl extends Writer {
 	 */
 	@Override
 	public void write(String[] content) {
+		if (null == getDestination()) {
+			throw new RuntimeException("Destination is not provided.");
+		}
 		BufferedWriter buff = null;
 		if (outputfiles.size() > 0) {
 			try {
@@ -56,9 +59,7 @@ public class FileWriterImpl extends Writer {
 	 */
 	@Override
 	protected boolean initialise() {
-		if (null == getDestination()) {
-			throw new RuntimeException("Destination is not provided.");
-		}
+		
 		if (null == getSource()) {
 			throw new RuntimeException("Source is not provided.");
 		}
@@ -69,9 +70,12 @@ public class FileWriterImpl extends Writer {
 
 				if (contents != null && contents.length > 0) {
 					for (File file : contents) {
-						outputfiles.add(file.getName().substring(0,
-								file.getName().lastIndexOf('.') + 1)
-								+ "out");
+						if (file.getName().endsWith(".txt")) {
+							outputfiles.add(file.getName().substring(0,
+									file.getName().lastIndexOf('.') + 1)
+									+ "out");
+						}
+						
 					}
 					Collections.sort(outputfiles);
 				}

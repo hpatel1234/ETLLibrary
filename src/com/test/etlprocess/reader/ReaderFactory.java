@@ -6,6 +6,7 @@ import com.test.etlprocess.reader.impl.FileReaderImpl;
  *
  */
 public class ReaderFactory {
+	public static final int FILE_READER = 1;
     private static ReaderFactory instance = new ReaderFactory();
 	private ReaderFactory() {
 	}

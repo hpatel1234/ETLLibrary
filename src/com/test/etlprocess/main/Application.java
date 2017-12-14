@@ -34,10 +34,10 @@ public class Application {
 			destDir = args[1];
 		}
 		//Hard coded 1 is passed to get Reader which can read Files, when there are multiple readers this can be read from arguments list.
-		Reader reader = ReaderFactory.getInstance().getReader(1);
+		Reader reader = ReaderFactory.getInstance().getReader(ReaderFactory.FILE_READER);
 		reader.setSource(sourceDir);
 		//Hard coded 1 is passed to get writer wich can write to files, when there are multiple writers this can be read from arguments list.
-		Writer writer = WriterFactory.getInstance().getWriter(1);
+		Writer writer = WriterFactory.getInstance().getWriter(WriterFactory.FILLE_WRITER);
 		writer.setSource(sourceDir);
 		writer.setDestination(destDir);
 		
